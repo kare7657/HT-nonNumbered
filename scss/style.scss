@@ -1,0 +1,297 @@
+@import "./guideline";
+@import "./mixin";
+
+// 通用
+* {
+    @include all();
+}
+body.modal-open {
+    padding-right: 0px !important;
+    overflow-y: auto;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-right: 0 !important;
+    position: relative;
+    background-color: $primary-table;
+    @include mobile-XS() {
+        font-size: 0.775rem;
+    }
+    @include navbar();
+    @include footer();
+    @include back-top();
+    @include form();
+    @include table();
+    /* 跳到主要內容區塊 */
+    .for_accessibility .go-main {
+        position: absolute;
+        top: 18px;
+        left: 16px;
+        z-index: 1000;
+        width: 1px;
+        height: 1px;
+        white-space: nowrap;
+        overflow: hidden;
+        color: #fff;
+        border-radius: 4px;
+    }
+    .for_accessibility .go-main:focus {
+        width: auto;
+        height: auto;
+        padding: 6px;
+        background-color: $primary-dark;
+    }
+    .for_accessibility div {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: transparent;
+        opacity: 0.1;
+    }
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: relative;
+        padding: $p-XS 0;
+        min-height: 747px;
+        width: 100%;
+        @include web-XL {
+            min-height: 76vh;
+        }
+        @include web-L {
+            min-height: 79vh;
+        }
+        @include web-S {
+            min-height: 78vh;
+            justify-content: center;
+        }
+        @include pad {
+            min-height: 77vh;
+        }
+        @include mobile-L {
+            min-height: 50vh;
+            padding: 0;
+        }
+
+        .card {
+            background-color: white !important;
+            padding: $p-M $p-L;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba($color: black, $alpha: 0.1);
+            border: unset;
+            display: block;
+            @include pad {
+                padding: $p-S $p-M;
+            }
+            @include mobile-L {
+                padding: $p-S;
+            }
+        }
+        section {
+            width: 100%;
+        }
+
+        //網站導覽
+        .content-webmap {
+            h2 {
+                text-align: center;
+                margin-bottom: $p-S;
+            }
+            .list-gp {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: start;
+                margin-top: $m-M;
+                @include pad {
+                    justify-content: space-between;
+                }
+                @include mobile-L {
+                    margin-bottom: $m-S;
+                }
+                .text-gp {
+                    width: 23%;
+                    margin-right: $m-S;
+                    margin-bottom: $m-S;
+                    @include web-S {
+                        width: 30%;
+                    }
+                    @include pad {
+                        width: 48%;
+                        margin-right: 0;
+                        margin-bottom: $p-XS;
+                    }
+                    @include mobile-L() {
+                        width: 100%;
+                        margin-right: 0;
+                        margin-bottom: $p-XS;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                    ul {
+                        padding: $p-XS;
+                        padding-top: $p-XXS;
+                        list-style: none;
+                        font-size: $size-p;
+                        margin: 0;
+                        margin-bottom: $m-S;
+                        line-height: 2;
+                        @include mobile-L() {
+                            margin-bottom: 0;
+                            padding-bottom: 0;
+                        }
+                        a {
+                            color: $primary-default;
+                        }
+                    }
+                    .title {
+                        display: block;
+                        font-weight: bold;
+                        font-size: $size-h5;
+                        color: $primary-dark;
+                        background-color: $primary-table;
+                        padding: $p-XXS $p-XS;
+                        margin: 0;
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+        // 一般
+        .content-normal {
+            ul:not(.nav, .breadcrumb) {
+                padding-left: $size-h5;
+                li:not(.nav-item) {
+                    line-height: 2;
+                    color: $text;
+                    list-style-position: outside;
+                }
+            }
+            ol {
+                padding: 0;
+                li {
+                    line-height: 2;
+                    color: $text;
+                    list-style-position: inside;
+                    padding: 0;
+                }
+            }
+            h3,
+            h4,
+            h5 {
+                margin-top: $m-S;
+                margin-bottom: $p-XXS;
+            }
+            h2 {
+                text-align: center;
+                margin-bottom: $p-S;
+            }
+            .title {
+                font-weight: bold;
+                color: black;
+            }
+        }
+
+        //首頁
+        .content-index {
+            .card {
+                padding: 0;
+                img {
+                    width: 100%;
+                    border-radius: 16px 16px 0 0;
+                    @include mobile-L {
+                        object-fit: cover;
+                        height: 140px;
+                    }
+                    @include mobile-XS {
+                        height: 120px;
+                    }
+                }
+                .info {
+                    padding: $p-XXS $p-XS;
+                    text-align: center;
+                    background-color: #e4f3b1;
+                    color: $primary-dark;
+                    @include mobile-L {
+                        text-align: left;
+                        margin-bottom: $m-XXS;
+                    }
+                    i {
+                        margin-right: $p-XXS;
+                    }
+                }
+                .btn {
+                    width: 100%;
+                    padding: 0;
+                    margin-top: $m-S;
+                    @include mobile-L {
+                        margin: $m-XS 0;
+                    }
+                    button {
+                        @include mobile-L {
+                            width: 100%;
+                        }
+                    }
+                }
+                form {
+                    padding: $p-XL;
+                    max-width: 800px;
+                    @include web-S {
+                        min-height: 48vh;
+                    }
+                    @include mobile-L {
+                        padding: $p-S;
+                        max-width: unset;
+                        min-height: initial;
+                    }
+                    table {
+                        margin-bottom: $m-XS;
+                        thead {
+                            th {
+                                &:first-child {
+                                    text-align: center;
+                                    @include mobile-L {
+                                        width: 30% !important;
+                                    }
+                                }
+                                &:nth-child(2) {
+                                    width: 70% !important;
+                                }
+                                .btn-choice {
+                                    font-size: $size-p;
+                                    border: solid 1px white;
+                                    padding: 0px $p-XXS;
+                                    height: unset;
+                                    &:hover {
+                                        background-color: white;
+                                        color: $primary-default;
+                                    }
+                                    @include mobile-L {
+                                        padding: 2px $m-XXS;
+                                        margin-bottom: $m-XXS;
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            td {
+                                &:first-child {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
