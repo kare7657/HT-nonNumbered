@@ -93,6 +93,12 @@ body {
             @include mobile-L {
                 padding: $p-S;
             }
+            .alert {
+                margin-top: $m-M;
+                @include mobile-L {
+                    margin-top: $m-S;
+                }
+            }
         }
         section {
             width: 100%;
@@ -208,20 +214,15 @@ body {
                     border-radius: 16px 16px 0 0;
                     @include mobile-L {
                         object-fit: cover;
-                        height: 140px;
-                    }
-                    @include mobile-XS {
-                        height: 120px;
                     }
                 }
                 .info {
-                    padding: $p-XXS $p-XS;
-                    text-align: center;
-                    background-color: #e4f3b1;
+                    margin-bottom: $m-M;
                     color: $primary-dark;
+                    font-size: $size-h5;
                     @include mobile-L {
-                        text-align: left;
-                        margin-bottom: $m-XXS;
+                        margin-bottom: $m-S;
+                        font-size: $size-p;
                     }
                     i {
                         margin-right: $p-XXS;
@@ -231,9 +232,6 @@ body {
                     width: 100%;
                     padding: 0;
                     margin-top: $m-S;
-                    @include mobile-L {
-                        margin: $m-XS 0;
-                    }
                     button {
                         @include mobile-L {
                             width: 100%;
@@ -242,6 +240,7 @@ body {
                 }
                 form {
                     padding: $p-XL;
+                    padding-top: $p-M;
                     max-width: 800px;
                     @include web-S {
                         min-height: 48vh;
@@ -287,6 +286,55 @@ body {
                                     align-items: center;
                                     justify-content: center;
                                 }
+                            }
+                        }
+                    }
+                    .input-group {
+                        margin-top: $p-XXS;
+                        display: flex;
+                        justify-content: space-between;
+                        /* dropzone */
+                        .dropzone {
+                            width: 100%;
+                            min-height: 200px;
+                            border: dashed 2px #ced4da;
+                            border-radius: 4px;
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                        }
+                        .dropzone.dz-clickable .dz-message {
+                            width: 100%;
+                            color: #939ba2;
+                        }
+                        .input-group > .custom-file {
+                            height: 100%;
+                            flex-wrap: wrap;
+                        }
+                        .dropzone .delete-btn {
+                            position: absolute;
+                            right: -12px;
+                            top: -12px;
+                            font-size: 1.6rem;
+                            font-weight: bold;
+                            cursor: pointer;
+                            z-index: 30;
+                            color: #999;
+                        }
+                        .dropzone .dz-preview .dz-image {
+                            width: 120px;
+                            height: 120px;
+                            @include pad {
+                                width: 100px;
+                                height: 100px;
+                            }
+                            @include mobile-L {
+                                width: 90px;
+                                height: 90px;
+                            }
+                            @include mobile-XS {
+                                width: 60px;
+                                height: 60px;
                             }
                         }
                     }

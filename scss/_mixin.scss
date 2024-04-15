@@ -482,7 +482,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             box-shadow: 0 0 10px rgba($color: $bk-20, $alpha: 1);
-            @include pad() {
+            @include mobile-L() {
                 display: none;
             }
             .top {
@@ -525,7 +525,7 @@
         .mobile {
             display: none;
             height: 60px;
-            @include pad() {
+            @include mobile-L() {
                 background-color: $primary-default;
                 display: block;
                 position: relative;

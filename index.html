@@ -26,10 +26,11 @@
         <a href="#C" title="中央內容區塊" id="AC" accesskey="C">:::</a>
         <section class="content-index container">
             <div class="card">
-                <img src="img/banner.jpg" alt="banner">
-                <p class="info"><i class="fas fa-info-circle"></i>歡迎進入附件下載系統，請輸入查詢條件後，按「查詢」鍵</p>
+                <img src="img/banner.jpg" alt="banner" class="pc-bn">
+                <img src="img/banner_mobile.jpg" alt="mobile-banner" class="mobile-bn">
 
                 <form>
+                    <p class="info"><i class="fas fa-info-circle"></i>歡迎進入附件下載系統，請輸入查詢條件後，按「查詢」鍵</p>
                     <article class="search-gp">
                         <div class="form-gp">
                             <label for="document_number">公文文號<span class="notice">*</span></label>
@@ -133,6 +134,10 @@
                         </table>
                         <div class="btn">
                             <button type="button" onclick="location.href=''">下載勾選附件</button>
+                        </div>
+                        <div class="alert alert-warning" role="alert">
+                            <i class="fas fa-info-circle"></i>
+                            檔案下載後，請至「<a href="checksum.html" class="alert-link">檢核碼查詢</a>」頁面上傳檔案，即可查詢「檢核碼」
                         </div>
                     </article>
 

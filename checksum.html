@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/brand.ico" type="image/x-icon">
+    <title>公文大附件傳輸系統-檢核碼查詢</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="scss/bootstrap.4.2.css">
+    <!-- dropzone -->
+    <link rel="stylesheet" href="scss/dropzone.min.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <!-- our css -->
+    <link rel="stylesheet" href="scss/style.css">
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <header id="header"></header>
+    <main>
+        <a href="#C" title="中央內容區塊" id="AC" accesskey="C">:::</a>
+        <section class="content-index container">
+            <div class="card">
+                <picture>
+                    <source media="(max-width:568px)" srcset="img/banner_mobile-2.jpg" class="mobile-bn">
+                    <img src="img/banner2.jpg" alt="banner" class="pc-bn">
+                </picture>
+
+                <form>
+                    <p class="info"><i class="fas fa-info-circle"></i>歡迎進入附件下載系統，請上傳檔案後，按「查詢」鍵查詢檢核碼</p>
+                    <article>
+                        <!-- input file-dropzone -->
+                        <div class="form-sortable">
+                            <div class="form-group">
+                                <h5>檔案上傳</h5>
+                                <div class="input-group">
+                                    <div class="w-100 dropzone" action="/file-upload" id="my-dropzone">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <button type="button" onclick="location.href=''">查詢</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class="form-gp">
+                            <h5>檢核碼</h5>
+                            <p>asdhnjhfgl</p>
+                        </div>
+                    </article>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <!-- footer -->
+    <footer id="footer"></footer>
+
+    <!-- jquery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- 引入html header&footer -->
+    <script>
+        $(function () {
+            $("#header").load('header.html');
+            $("#footer").load("footer.html");
+        });
+    </script>
+
+    <!-- dropzone -->
+    <script src="js/dropzone.min.js"></script>
+    <script>
+        Dropzone.options.myDropzone = {
+            maxFilesize: 5, // 最大可上傳大小(MB)
+            // 添加刪除按鈕
+            addRemoveLinks: true,
+            init: function () {
+                this.on("complete", function (file) {
+                    $(".dz-remove").html("<div><i class='delete-btn fas fa-times-circle'></i></div>");
+                });
+            },
+            // 中文
+            dictDefaultMessage: "選擇檔案或拖曳檔案至此",
+            dictFileTooBig: "({{filesize}}MB)已超過檔案太小限制. 最大檔案大小: {{maxFilesize}}MB",
+            dictFallbackMessage: "你的瀏覽器不支援拖曳檔案上傳",
+            dictFallbackText: "請像過去一樣使用下方後備表格上傳你的文件",
+            dictInvalidFileType: "你無法上傳這個格式的檔案",
+            dictResponseError: "伺服器回應錯誤. 代碼: {{statusCode}}",
+            dictCancelUpload: "取消上傳",
+            dictUploadCanceled: "已取消上傳",
+            dictCancelUploadConfirmation: "你確定要取消上傳嗎？",
+            dictRemoveFile: "刪除檔案",
+            dictMaxFilesExceeded: "你無法再上傳更多檔案",
+        };
+    </script>
+
+</body>
+
+</html>

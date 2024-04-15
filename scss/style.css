@@ -476,7 +476,7 @@ body .navbar .pc {
   flex-wrap: wrap;
   box-shadow: 0 0 10px #dcdddd;
 }
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   body .navbar .pc {
     display: none;
   }
@@ -530,7 +530,7 @@ body .navbar .mobile {
   display: none;
   height: 60px;
 }
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   body .navbar .mobile {
     background-color: #577B0F;
     display: block;
@@ -1469,6 +1469,14 @@ body main .card {
     padding: 24px;
   }
 }
+body main .card .alert {
+  margin-top: 36px;
+}
+@media (max-width: 568px) {
+  body main .card .alert {
+    margin-top: 20px;
+  }
+}
 body main section {
   width: 100%;
 }
@@ -1589,24 +1597,17 @@ body main .content-index .card img {
   body main .content-index .card img {
     -o-object-fit: cover;
        object-fit: cover;
-    height: 140px;
-  }
-}
-@media (max-width: 320px) {
-  body main .content-index .card img {
-    height: 120px;
   }
 }
 body main .content-index .card .info {
-  padding: 8px 16px;
-  text-align: center;
-  background-color: #e4f3b1;
+  margin-bottom: 36px;
   color: #314607;
+  font-size: 1.25rem;
 }
 @media (max-width: 568px) {
   body main .content-index .card .info {
-    text-align: left;
-    margin-bottom: 4px;
+    margin-bottom: 20px;
+    font-size: 1rem;
   }
 }
 body main .content-index .card .info i {
@@ -1618,17 +1619,13 @@ body main .content-index .card .btn {
   margin-top: 20px;
 }
 @media (max-width: 568px) {
-  body main .content-index .card .btn {
-    margin: 12px 0;
-  }
-}
-@media (max-width: 568px) {
   body main .content-index .card .btn button {
     width: 100%;
   }
 }
 body main .content-index .card form {
   padding: 56px;
+  padding-top: 32px;
   max-width: 800px;
 }
 @media (max-width: 1024px) {
@@ -1677,4 +1674,59 @@ body main .content-index .card form table tbody td:first-child {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+body main .content-index .card form .input-group {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  /* dropzone */
+}
+body main .content-index .card form .input-group .dropzone {
+  width: 100%;
+  min-height: 200px;
+  border: dashed 2px #ced4da;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body main .content-index .card form .input-group .dropzone.dz-clickable .dz-message {
+  width: 100%;
+  color: #939ba2;
+}
+body main .content-index .card form .input-group .input-group > .custom-file {
+  height: 100%;
+  flex-wrap: wrap;
+}
+body main .content-index .card form .input-group .dropzone .delete-btn {
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 30;
+  color: #999;
+}
+body main .content-index .card form .input-group .dropzone .dz-preview .dz-image {
+  width: 120px;
+  height: 120px;
+}
+@media (max-width: 768px) {
+  body main .content-index .card form .input-group .dropzone .dz-preview .dz-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 568px) {
+  body main .content-index .card form .input-group .dropzone .dz-preview .dz-image {
+    width: 90px;
+    height: 90px;
+  }
+}
+@media (max-width: 320px) {
+  body main .content-index .card form .input-group .dropzone .dz-preview .dz-image {
+    width: 60px;
+    height: 60px;
+  }
 }/*# sourceMappingURL=style.css.map */
