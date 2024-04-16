@@ -476,52 +476,6 @@
             display: block;
             margin-top: 0;
         }
-        .pc {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            box-shadow: 0 0 10px rgba($color: $bk-20, $alpha: 1);
-            @include mobile-L() {
-                display: none;
-            }
-            .top {
-                width: 100%;
-                max-width: 1200px;
-                margin: auto;
-                display: flex;
-                align-items: center;
-                padding: 0;
-                @include web-XL {
-                    max-width: 1280px;
-                }
-                @include web-L {
-                    max-width: 1140px;
-                }
-                @include web-S() {
-                    max-width: initial;
-                    margin-left: 0;
-                    padding: 0 $p-XS;
-                }
-                .logo {
-                    display: flex;
-                    align-items: center;
-                    justify-content: start;
-                    img {
-                        height: 120px;
-                        object-fit: contain;
-                        margin-right: $m-XS;
-                    }
-                }
-                h1 {
-                    margin: 0;
-                    padding: 0 $p-XXS;
-                    @include web-S {
-                        font-size: $size-h2;
-                    }
-                }
-            }
-        }
         .mobile {
             display: none;
             height: 60px;
@@ -697,7 +651,7 @@
             width: 100%;
             background-color: transparent;
         }
-        article {
+        .block {
             margin-bottom: $m-M;
             &:last-child {
                 margin-bottom: 0;
@@ -1145,10 +1099,6 @@
             text-align: left;
         }
         tr {
-            // border-bottom: solid 1px $bk-20;
-            // &:hover {
-            //     background-color: #f8f8f8 !important;
-            // }
             &:nth-child(even) {
                 background-color: $primary-table;
             }

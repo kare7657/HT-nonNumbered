@@ -24,14 +24,16 @@
     <header id="header"></header>
     <main>
         <a href="#C" title="中央內容區塊" id="AC" accesskey="C">:::</a>
-        <section class="content-index container">
+        <div class="content-index container">
             <div class="card">
-                <img src="img/banner.jpg" alt="banner" class="pc-bn">
-                <img src="img/banner_mobile.jpg" alt="mobile-banner" class="mobile-bn">
+                <picture>
+                    <source media="(max-width:568px)" srcset="img/banner_mobile.jpg" class="mobile-bn">
+                    <img src="img/banner.jpg" alt="banner" class="pc-bn">
+                </picture>
 
                 <form>
                     <p class="info"><i class="fas fa-info-circle"></i>歡迎進入附件下載系統，請輸入查詢條件後，按「查詢」鍵</p>
-                    <article class="search-gp">
+                    <div class="block">
                         <div class="form-gp">
                             <label for="document_number">公文文號<span class="notice">*</span></label>
                             <input type="text" name="document_number" id="document_number"
@@ -44,9 +46,9 @@
                         <div class="btn">
                             <button type="button" onclick="location.href=''">查詢</button>
                         </div>
-                    </article>
+                    </div>
 
-                    <article class="number-list">
+                    <div class="block">
                         <div class="form-gp choice">
                             <h5>壓縮檔格式<span class="notice">*</span></h5>
                             <div class="item">
@@ -58,7 +60,7 @@
                                 <label for="rar">RAR</label>
                             </div>
                         </div>
-                        <table class="table-default " summary="下載清單，第一欄為姓名，第二欄為附件名稱">
+                        <table class="table-default">
                             <thead>
                                 <tr>
                                     <th id="choice" style="width: 25%;">
@@ -139,11 +141,11 @@
                             <i class="fas fa-info-circle"></i>
                             檔案下載後，請至「<a href="checksum.html" class="alert-link">檢核碼查詢</a>」頁面上傳檔案，即可查詢「檢核碼」
                         </div>
-                    </article>
+                    </div>
 
                 </form>
             </div>
-        </section>
+        </div>
 
     </main>
     <!-- footer -->

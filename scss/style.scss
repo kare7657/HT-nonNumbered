@@ -69,7 +69,7 @@ body {
             min-height: 79vh;
         }
         @include web-S {
-            min-height: 78vh;
+            min-height: 87vh;
             justify-content: center;
         }
         @include pad {
@@ -94,114 +94,13 @@ body {
                 padding: $p-S;
             }
             .alert {
+                margin: 0;
                 margin-top: $m-M;
+                font-size: $size-h5;
+                line-height: 1.75;
                 @include mobile-L {
-                    margin-top: $m-S;
+                    margin-bottom: $m-XS;
                 }
-            }
-        }
-        section {
-            width: 100%;
-        }
-
-        //網站導覽
-        .content-webmap {
-            h2 {
-                text-align: center;
-                margin-bottom: $p-S;
-            }
-            .list-gp {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: start;
-                margin-top: $m-M;
-                @include pad {
-                    justify-content: space-between;
-                }
-                @include mobile-L {
-                    margin-bottom: $m-S;
-                }
-                .text-gp {
-                    width: 23%;
-                    margin-right: $m-S;
-                    margin-bottom: $m-S;
-                    @include web-S {
-                        width: 30%;
-                    }
-                    @include pad {
-                        width: 48%;
-                        margin-right: 0;
-                        margin-bottom: $p-XS;
-                    }
-                    @include mobile-L() {
-                        width: 100%;
-                        margin-right: 0;
-                        margin-bottom: $p-XS;
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
-                    }
-                    ul {
-                        padding: $p-XS;
-                        padding-top: $p-XXS;
-                        list-style: none;
-                        font-size: $size-p;
-                        margin: 0;
-                        margin-bottom: $m-S;
-                        line-height: 2;
-                        @include mobile-L() {
-                            margin-bottom: 0;
-                            padding-bottom: 0;
-                        }
-                        a {
-                            color: $primary-default;
-                        }
-                    }
-                    .title {
-                        display: block;
-                        font-weight: bold;
-                        font-size: $size-h5;
-                        color: $primary-dark;
-                        background-color: $primary-table;
-                        padding: $p-XXS $p-XS;
-                        margin: 0;
-                        border-radius: 4px;
-                    }
-                }
-            }
-        }
-        // 一般
-        .content-normal {
-            ul:not(.nav, .breadcrumb) {
-                padding-left: $size-h5;
-                li:not(.nav-item) {
-                    line-height: 2;
-                    color: $text;
-                    list-style-position: outside;
-                }
-            }
-            ol {
-                padding: 0;
-                li {
-                    line-height: 2;
-                    color: $text;
-                    list-style-position: inside;
-                    padding: 0;
-                }
-            }
-            h3,
-            h4,
-            h5 {
-                margin-top: $m-S;
-                margin-bottom: $p-XXS;
-            }
-            h2 {
-                text-align: center;
-                margin-bottom: $p-S;
-            }
-            .title {
-                font-weight: bold;
-                color: black;
             }
         }
 
@@ -231,7 +130,7 @@ body {
                 .btn {
                     width: 100%;
                     padding: 0;
-                    margin-top: $m-S;
+                    margin-top: $m-XS;
                     button {
                         @include mobile-L {
                             width: 100%;
