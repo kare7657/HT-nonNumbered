@@ -242,3 +242,40 @@ body {
         }
     }
 }
+// 施工中
+.content-Under-Construction {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    img {
+        width: 100%;
+        object-fit: contain;
+        max-width: 200px;
+        margin-bottom: $m-XS;
+        @include mobile-L {
+            max-width: 150px;
+        }
+    }
+    h1,
+    p {
+        color: white;
+        width: 100%;
+        text-align: center;
+        font-family: "微軟正黑體" !important;
+        letter-spacing: 1px;
+    }
+    h1 {
+        @include mobile-L {
+            font-size: $size-h3;
+        }
+    }
+    p {
+        font-size: $size-h3;
+        @include mobile-L {
+            font-size: $size-p;
+        }
+    }
+}
